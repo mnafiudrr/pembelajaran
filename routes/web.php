@@ -7,6 +7,7 @@ use App\Http\Controllers\SubmateriController;
 use App\Http\Controllers\SubsubmateriController;
 use App\Http\Controllers\KontenssmController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PengaturanController;
 
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
@@ -109,7 +110,7 @@ Route::group(['middleware' => 'guest'], function() {
             Route::get('/create', [PengaturanController::class,'create']);
             Route::post('/', [PengaturanController::class,'store']);
             Route::get('{id}/detail', [PengaturanController::class,'detail'])->name('pengaturan.detail');
-            Route::get('{id}/edit', [PengaturanController::class,'edit']);
+            Route::get('{id}/edit', [PengaturanController::class,'edit'])->name('pengaturan.edit');
             Route::post('{id}/update', [PengaturanController::class,'update']);
             Route::get('{id}/delete', [PengaturanController::class,'delete'])->name('pengaturan.delete');
         }
