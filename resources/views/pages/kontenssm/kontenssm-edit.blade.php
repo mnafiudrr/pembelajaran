@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label>Photo 2</label>
                             @if($kontenssm->photo2)
-                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo2) }}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo2) }}" class="img-photo2 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
                             @error('photo2')
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label>Photo 3</label>
                             @if($kontenssm->photo3)
-                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo3) }}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo3) }}" class="img-photo3 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('photo3') is-invalid @enderror" name="photo3" id="image-photo3" onchange="previewPhoto3()">
                             @error('photo3')

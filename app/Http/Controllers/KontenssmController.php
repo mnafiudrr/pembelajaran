@@ -23,8 +23,11 @@ class KontenssmController extends Controller
             'photo2' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
             'photo3' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
             'paragraf1' => 'required',
+            'juduldoc1' => 'min:5',
             'doc1' => 'mimes:pdf|max:4096',
+            'juduldoc2' => 'min:5',
             'doc2' => 'mimes:pdf|max:4096',
+            'juduldoc3' => 'min:5',
             'doc3' => 'mimes:pdf|max:4096',
         ]);
 
@@ -118,7 +121,16 @@ class KontenssmController extends Controller
 
         $request->validate([
             'judul' => 'required|min:5',
+            'photo1' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo2' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo3' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
             'paragraf1' => 'required',
+            'juduldoc1' => 'min:5',
+            'doc1' => 'mimes:pdf|max:4096',
+            'juduldoc2' => 'min:5',
+            'doc2' => 'mimes:pdf|max:4096',
+            'juduldoc3' => 'min:5',
+            'doc3' => 'mimes:pdf|max:4096',
         ]);
 
         $kontenssm->update([
