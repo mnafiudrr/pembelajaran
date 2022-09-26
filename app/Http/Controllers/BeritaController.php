@@ -24,6 +24,8 @@ class BeritaController extends Controller
         $request->validate([
             'judul' => 'required|min:5',
             'photo1' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo2' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo3' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
             'paragraf1' => 'required',
         ]);
 
@@ -77,6 +79,9 @@ class BeritaController extends Controller
 
         $request->validate([
             'judul' => 'required|min:5',
+            'photo1' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo2' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
+            'photo3' => 'image|mimes:jpg,png,jpeg,gif|max:2048',
             'paragraf1' => 'required',
         ]);
 
@@ -89,7 +94,6 @@ class BeritaController extends Controller
         ]);
 
         if($request->hasfile('photo1')){
-            $request->validate(['photo1' => 'image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
             $request->file('photo1')->storeAs('public/berita',$namafilephoto1);
@@ -97,15 +101,13 @@ class BeritaController extends Controller
         }
 
         if($request->hasfile('photo2')){
-            $request->validate(['photo2' => 'image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
             $request->file('photo2')->storeAs('public/berita',$namafilephoto2);
             $berita->photo2 = $namafilephoto2;       
         }
 
-        if($request->hasfile('photo3')){
-            $request->validate(['photo3' => 'image|mimes:jpg,png,jpeg,gif|max:2048',]);
+        if($request->hasfile('photo3')){    
             $extphoto3 = $request->file('photo3')->getClientOriginalExtension();
             $namafilephoto3 = "photo3_".time().'.'.$extphoto3;
             $request->file('photo3')->storeAs('public/berita',$namafilephoto3);
