@@ -103,6 +103,18 @@ Route::group(['middleware' => 'guest'], function() {
         }
     );
 
+    Route::prefix('pengaturan')->group(
+        function() {
+            Route::get('/', [PengaturanController::class,'index']);
+            Route::get('/create', [PengaturanController::class,'create']);
+            Route::post('/', [PengaturanController::class,'store']);
+            Route::get('{id}/detail', [PengaturanController::class,'detail'])->name('pengaturan.detail');
+            Route::get('{id}/edit', [PengaturanController::class,'edit']);
+            Route::post('{id}/update', [PengaturanController::class,'update']);
+            Route::get('{id}/delete', [PengaturanController::class,'delete'])->name('pengaturan.delete');
+        }
+    );
+
     Route::post('/logout', [AuthController::class, 'logout']);
 // });
     
