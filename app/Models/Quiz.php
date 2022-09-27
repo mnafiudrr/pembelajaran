@@ -9,16 +9,14 @@ class Quiz extends Model
 {
     use HasFactory;
 
-    protected $table='quiz';
-
     protected $fillable = [
         'icon',
         'header',
         'judul',
     ];
 
-    public function soal()
+    public function soals()
     {
-        return $this->hasMany('App\Models\Soal','quiz_id');
+        return $this->hasMany('App\Models\Soal','quizzes_id');
     }
 }

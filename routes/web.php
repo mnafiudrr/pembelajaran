@@ -7,6 +7,7 @@ use App\Http\Controllers\SubmateriController;
 use App\Http\Controllers\SubsubmateriController;
 use App\Http\Controllers\KontenssmController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\SoalController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengaturanController;
 
@@ -102,6 +103,17 @@ Route::group(['middleware' => 'guest'], function() {
             Route::get('{id}/edit', [QuizController::class,'edit']);
             Route::post('{id}/update', [QuizController::class,'update']);
             Route::get('{id}/delete', [QuizController::class,'delete'])->name('quiz.delete');
+        }
+    );
+
+    Route::prefix('soal')->group(
+        function() {
+            Route::get('/create', [SoalController::class,'create']);
+            Route::post('/', [SoalController::class,'store']);
+            Route::get('{id}/detail', [SoalController::class,'detail'])->name('soal.detail');
+            Route::get('{id}/edit', [SoalController::class,'edit']);
+            Route::post('{id}/update', [SoalController::class,'update']);
+            Route::get('{id}/delete', [SoalController::class,'delete'])->name('soal.delete');
         }
     );
 

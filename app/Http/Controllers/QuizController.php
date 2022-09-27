@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Quiz;
+use App\Models\Soal;
 
 class QuizController extends Controller
 {
@@ -49,10 +50,10 @@ class QuizController extends Controller
     public function detail($id)
     {
         $quiz = Quiz::find($id);
-        // $submateri = Submateri::where('materis_id', $materi->id)->get();
+        $soal = Soal::where('quizzes_id', $quiz->id)->get();
         return view('pages.quiz.quiz', [
             'quiz' => $quiz,
-            // 'submateri' => $submateri
+            'soal' => $soal
         ]);
     }
 

@@ -55,13 +55,13 @@
             </a>
         </div>
 
-        @if(session('sukses-sub'))
+        @if(session('sukses-soal'))
             <div class="alert alert-success" role="alert">
-                {{ session('sukses-sub') }}
+                {{ session('sukses-soal') }}
             </div>
-        @elseif(session('hapus-sub'))
+        @elseif(session('hapus-soal'))
             <div class="alert alert-danger" role="alert">
-                {{ session('hapus-sub') }}
+                {{ session('hapus-soal') }}
             </div>
         @endif
 
@@ -77,20 +77,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($submateri as $submateri)
+                            @foreach($soal as $soal)
                                 <tr>
                                     <td>
-                                        {{$submateri->judul}}
+                                        {{$soal->soal}}
                                     </td>
                                     <td>
-                                        {{$submateri->created_at}}
+                                        {{$soal->created_at}}
                                     </td>
                                     <td>
-                                        <a href="{{ route('submateri.detail', $submateri->id) }}" class="d-none d-sm-inline-block shadow-sm btn-success btn-lg"><i class="fas fa-info-circle fa-sm text-white-50"> Detail</a>
-                                        <a href="{{ route('submateri.delete', $submateri->id) }}" class="d-none d-sm-inline-block shadow-sm btn-danger btn-lg"><i class="fas fa-trash fa-sm text-white-50"> Hapus</a>
+                                        <a href="{{ route('soal.detail', $soal->id) }}" class="d-none d-sm-inline-block shadow-sm btn-success btn-lg"><i class="fas fa-info-circle fa-sm text-white-50"> Detail</a>
+                                        <a href="{{ route('soal.delete', $soal->id) }}" class="d-none d-sm-inline-block shadow-sm btn-danger btn-lg"><i class="fas fa-trash fa-sm text-white-50"> Hapus</a>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
