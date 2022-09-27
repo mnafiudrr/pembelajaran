@@ -19,7 +19,7 @@ class CreateSubmaterisTable extends Migration
             $table->string('photo');
             $table->text('paragraf1');
             $table->text('paragraf2')->nullable();
-            $table->foreignId('materis_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();;
+            $table->foreignId('materis_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\SubmateriController;
 use App\Http\Controllers\SubsubmateriController;
 use App\Http\Controllers\KontenssmController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengaturanController;
 
@@ -89,6 +90,18 @@ Route::group(['middleware' => 'guest'], function() {
             Route::get('{id}/edit', [KontenssmController::class,'edit']);
             Route::post('{id}/update', [KontenssmController::class,'update']);
             Route::get('{id}/delete', [KontenssmController::class,'delete'])->name('kontenssm.delete');
+        }
+    );
+
+    Route::prefix('quiz')->group(
+        function() {
+            Route::get('/', [QuizController::class,'index']);
+            Route::get('/create', [QuizController::class,'create']);
+            Route::post('/', [QuizController::class,'store']);
+            Route::get('{id}/detail', [QuizController::class,'detail'])->name('quiz.detail');
+            Route::get('{id}/edit', [QuizController::class,'edit']);
+            Route::post('{id}/update', [QuizController::class,'update']);
+            Route::get('{id}/delete', [QuizController::class,'delete'])->name('quiz.delete');
         }
     );
 
