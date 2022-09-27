@@ -43,8 +43,6 @@ Route::group(['middleware' => 'guest'], function() {
             Route::get('/', [UserController::class,'index']);
             Route::get('/create', [UserController::class,'create']);
             Route::post('/', [UserController::class,'store']);
-            Route::get('{id}/profil', [UserController::class,'profil']);
-            Route::get('{id}/edit', [UserController::class,'edit']);
             Route::get('{id}/delete', [UserController::class,'delete'])->name('pengelola.delete');
         }
     );

@@ -36,22 +36,6 @@ class UserController extends Controller
         return redirect('/pengelola')->with('sukses', 'Pengelola berhasil ditambahkan');
     }
 
-    public function profil($id)
-    {
-        return view('pages.pengelola.profil');
-    }
-
-    public function edit($id)
-    {
-        $data_pengelola = User::find($id);
-        return view('pages.pengelola.edit', ['data_pengelola' => $data_pengelola]);
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     public function delete($id)
     {
         $pengelola = User::find($id);
