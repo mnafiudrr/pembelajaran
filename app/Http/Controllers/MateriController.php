@@ -49,11 +49,11 @@ class MateriController extends Controller
         }
 
         Materi::create([
-            'icon' => $namafileicon,
-            'header' => $namafileheader,
+            'icon' => 'uploads/materi/'.$namafileicon,
+            'header' => 'uploads/materi/'.$namafileheader,
             'judul' => $request->judul,
             'link' => $request->link,
-            'photo' => $namafilephoto,
+            'photo' => 'uploads/materi/'.$namafilephoto,
             'paragraf1' => $request->paragraf1,
             'paragraf2' => $request->paragraf2,
             'paragraf3' => $request->paragraf3,

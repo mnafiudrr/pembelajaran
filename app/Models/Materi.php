@@ -23,6 +23,6 @@ class Materi extends Model
 
     public function submateris()
     {
-        return $this->hasMany('App\Models\Submateri','materis_id');
+        return $this->hasMany(Submateri::class,'materis_id');
     }
 }
