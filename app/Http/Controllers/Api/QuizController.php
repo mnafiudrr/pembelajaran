@@ -21,9 +21,21 @@ class QuizController extends Controller
 
     public function index()
     {
-        $data = Quiz::select('id', 'icon', 'judul')->get();
+        $quiz = Quiz::select('id', 'icon', 'judul')->get();
 
-        return response()->json($data, 200);
+        $data = $quiz->transform(
+            function ($item){
+                return [
+                    "icon" => url($item->icon),
+                    "id" => $item->id,
+                    "title" => $item->judul
+                ];
+            }
+        );
+
+        return response()->json(["data" => [
+            "quiz" => $data
+        ]], 200);
     }
 
     public function questions($quiz_id)
