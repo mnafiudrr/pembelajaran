@@ -33,7 +33,6 @@ class PengaturanController extends Controller
             $extlogo = $request->file('logo')->getClientOriginalExtension();
             $namafilelogo = "logo_".time().'.'.$extlogo;
             $request->file('logo')->move('../uploads/pengaturan', $namafilelogo);
-            // $request->file('logo')->storeAs('public/pengaturan',$namafilelogo);
 
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;

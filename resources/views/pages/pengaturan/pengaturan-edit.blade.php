@@ -24,7 +24,7 @@
                             @if($pengaturan->logo)
                                 <img src="{{ url($pengaturan->logo)}}" class="img-logo img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" id="image-logo" onchange="previewlogo()">
+                            <input type="file" accept="image/*" class="form-control @error('logo') is-invalid @enderror" name="logo" id="image-logo" onchange="previewlogo()">
                             @error('logo')
                                 <div class="invalid-feedback">
                                     File logo tidak sesuai ketentuan.
@@ -47,7 +47,7 @@
                             @if($pengaturan->header)
                                 <img src="{{ url($pengaturan->header)}}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
+                            <input type="file" accept="image/*" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
                             @error('header')
                                 <div class="invalid-feedback">
                                     File header tidak sesuai ketentuan.

@@ -18,9 +18,9 @@
                         <div class="form-group">
                             <label>Icon/logo Quiz</label>
                             @if($quiz->icon)
-                                <img src="{{ asset('storage/quiz/'. $quiz->icon) }}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
+                                <img src="{{ url($quiz->icon)}}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
                             @endif
-                            <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()">
+                            <input type="file" accept="image/*" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()">
                             @error('icon')
                                 <div class="invalid-feedback" role="alert">
                                     File icon tidak sesuai ketentuan.
@@ -31,9 +31,9 @@
                         <div class="form-group">
                             <label>Header</label>
                             @if($quiz->header)
-                                <img src="{{ asset('storage/quiz/'. $quiz->header) }}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($quiz->header)}}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
+                            <input type="file" accept="image/*" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
                             @error('header')
                                 <div class="invalid-feedback" role="alert">
                                     File header tidak sesuai ketentuan.

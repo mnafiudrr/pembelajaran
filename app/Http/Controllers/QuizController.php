@@ -84,8 +84,7 @@ class QuizController extends Controller
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
             $request->file('icon')->move('../uploads/quiz', $namafileicon);
-            // $request->file('icon')->storeAs('public/quiz',$namafileicon);
-            $quiz->icon = $namafileicon;            
+            $quiz->icon = 'uploads/quiz/'.$namafileicon;            
         }
 
         if($request->hasfile('header')){
@@ -93,8 +92,7 @@ class QuizController extends Controller
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
             $request->file('header')->move('../uploads/quiz', $namafileheader);
-            // $request->file('header')->storeAs('public/quiz',$namafileheader);
-            $quiz->header = $namafileheader; 
+            $quiz->header = 'uploads/quiz/'.$namafileheader; 
         }
 
         $quiz->save();
