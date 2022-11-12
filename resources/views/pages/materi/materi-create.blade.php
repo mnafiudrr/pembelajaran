@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label>Icon/logo Materi</label>
                             <img class="img-icon img-fluid mb-3" style="max-height: 150px;">
-                            <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()" required>
+                            <input type="file" accept="image/*" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()" required>
                             @error('icon')
                                 <div class="invalid-feedback">
                                     File icon tidak sesuai ketentuan.
@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label>Header</label>
                             <img class="img-header img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
+                            <input type="file" accept="image/*" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
                             @error('header')
                                 <div class="invalid-feedback">
                                     File header tidak sesuai ketentuan.
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label>Photo</label>
                             <img class="img-photo img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()" required>
+                            <input type="file" accept="image/*" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()" required>
                             @error('photo')
                                 <div class="invalid-feedback">
                                     File photo tidak sesuai ketentuan.

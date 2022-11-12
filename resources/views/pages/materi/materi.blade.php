@@ -30,13 +30,13 @@
                         <tr>
                             <td>Icon/logo</td>
                             <td>
-                                <img src="{{ asset('storage/materi/'. $materi->icon)}}" style="max-height: 100px;">
+                                <img src="{{ url($materi->icon)}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
                             <td>Header</td>
                             <td>
-                                <img src="{{ asset('storage/materi/'. $materi->header)}}" style="max-height: 100px;">
+                                <img src="{{ url($materi->header)}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
@@ -50,7 +50,7 @@
                         <tr>
                             <td>Photo</td>
                             <td>
-                                <img src="{{ asset('storage/materi/'. $materi->photo)}}" style="max-height: 100px;">
+                                <img src="{{ url($materi->photo )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>

@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <label>Icon/logo Materi</label>
                             @if($materi->icon)
-                                <img src="{{ asset('storage/materi/'. $materi->icon) }}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
+                                <img src="{{ url($materi->icon )}}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
                             @endif
                             <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()">
                             @error('icon')
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label>Header</label>
                             @if($materi->header)
-                                <img src="{{ asset('storage/materi/'. $materi->header) }}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($materi->header )}}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
                             @error('header')
@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <label>Photo</label>
                             @if($materi->photo)
-                                <img src="{{ asset('storage/materi/'. $materi->photo) }}" class="img-photo img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($materi->photo )}}" class="img-photo img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()">
                             @error('photo')
