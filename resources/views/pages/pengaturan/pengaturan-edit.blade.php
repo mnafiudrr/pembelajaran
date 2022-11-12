@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label>Logo Splash Screen</label>
                             @if($pengaturan->logo)
-                                <img src="{{ asset('storage/pengaturan/'. $pengaturan->logo) }}" class="img-logo img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($pengaturan->logo)}}" class="img-logo img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" id="image-logo" onchange="previewlogo()">
                             @error('logo')
@@ -45,9 +45,9 @@
                         <div class="form-group">
                             <label>Header Halaman Utama</label>
                             @if($pengaturan->header)
-                                <img src="{{ asset('storage/pengaturan/'. $pengaturan->header) }}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($pengaturan->header)}}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
+                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
                             @error('header')
                                 <div class="invalid-feedback">
                                     File header tidak sesuai ketentuan.
