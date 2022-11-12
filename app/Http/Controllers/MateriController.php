@@ -34,15 +34,18 @@ class MateriController extends Controller
         if($request->hasfile('icon', 'header', 'photo')){
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            $request->file('icon')->storeAs('public/materi',$namafileicon);
-
+            $request->file('icon')->move('../uploads/materi', $namafileicon);
+            // $request->file('icon')->storeAs('public/materi',$namafileicon);
+            
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/materi',$namafileheader);
-
+            $request->file('icon')->move('../uploads/materi', $namafileheader);
+            // $request->file('header')->storeAs('public/materi',$namafileheader);
+            
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            $request->file('photo')->storeAs('public/materi',$namafilephoto);          
+            $request->file('photo')->move('../uploads/materi', $namafilephoto);
+            // $request->file('photo')->storeAs('public/materi',$namafilephoto);          
         }
 
         Materi::create([
