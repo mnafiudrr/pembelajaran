@@ -37,7 +37,7 @@
                                 @if($berita->photo1 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/berita/'. $berita->photo1)}}" style="max-height: 100px;">
+                                    <img src="{{ url($berita->photo1) }}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
@@ -47,7 +47,7 @@
                                 @if($berita->photo2 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/berita/'. $berita->photo2)}}" style="max-height: 100px;">
+                                    <img src="{{ url($berita->photo2) }}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
@@ -57,7 +57,7 @@
                                 @if($berita->photo3 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/berita/'. $berita->photo3)}}" style="max-height: 100px;">
+                                    <img src="{{ url($berita->photo3 )}}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
