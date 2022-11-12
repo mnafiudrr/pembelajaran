@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label>Logo Splash Screen</label>
                             <img class="img-logo img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" id="image-logo" onchange="previewlogo()" required>
+                            <input type="file" accept="image/*" class="form-control @error('logo') is-invalid @enderror" name="logo" id="image-logo" onchange="previewlogo()" required>
                             @error('logo')
                                 <div class="invalid-feedback">
                                     File logo tidak sesuai ketentuan.
@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label>Header Halaman Utama</label>
                             <img class="img-header img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
+                            <input type="file" accept="image/*" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
                             @error('header')
                                 <div class="invalid-feedback">
                                     File header tidak sesuai ketentuan.

@@ -10,7 +10,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\SoalController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PengaturanController;
-
+use App\Http\Controllers\UploadsController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
@@ -142,3 +142,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
     
+Route::group(["prefix" => 'uploads'], function (){
+    Route::get("{file}", [UploadsController::class,'uploadFile']);
+    Route::get("{folder}/{file}", [UploadsController::class, 'uploads']);
+});

@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>Logo</td>
                                     <td>
-                                        <img src="{{ asset('storage/pengaturan/'. $pengaturan->logo)}}" style="max-height: 150px;">
+                                        <img src="{{ url($pengaturan->logo)}}" style="max-height: 150px;">
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,7 +52,7 @@
                                 <tr>
                                     <td>Header</td>
                                     <td>
-                                        <img src="{{ asset('storage/pengaturan/'. $pengaturan->header)}}" style="max-height: 150px;">
+                                        <img src="{{ url($pengaturan->header)}}" style="max-height: 150px;">
                                     </td>
                                 </tr>
                                 <tr>

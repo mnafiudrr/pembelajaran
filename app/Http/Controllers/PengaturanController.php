@@ -32,17 +32,18 @@ class PengaturanController extends Controller
         if($request->hasfile('logo', 'header')){
             $extlogo = $request->file('logo')->getClientOriginalExtension();
             $namafilelogo = "logo_".time().'.'.$extlogo;
-            $request->file('logo')->storeAs('public/pengaturan',$namafilelogo);
+            $request->file('logo')->move('../uploads/pengaturan', $namafilelogo);
+            // $request->file('logo')->storeAs('public/pengaturan',$namafilelogo);
 
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/pengaturan',$namafileheader);         
+            $request->file('header')->move('../uploads/pengaturan', $namafileheader);      
         }
 
         Pengaturan::create([
-            'logo' => $namafilelogo,
+            'logo' => 'uploads/pengaturan/'.$namafilelogo,
             'tagline' => $request->tagline,
-            'header' => $namafileheader,
+            'header' => 'uploads/pengaturan/'.$namafileheader,
             'link' => $request->link,
             'status' => $request->status,
         ]);

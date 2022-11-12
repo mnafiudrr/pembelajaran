@@ -30,13 +30,13 @@
                         <tr>
                             <td>Icon/logo</td>
                             <td>
-                                <img src="{{ asset('storage/quiz/'. $quiz->icon)}}" style="max-height: 100px;">
+                                <img src="{{ url($quiz->icon)}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
                             <td>Header</td>
                             <td>
-                                <img src="{{ asset('storage/quiz/'. $quiz->header)}}" style="max-height: 100px;">
+                                <img src="{{ url($quiz->header)}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>

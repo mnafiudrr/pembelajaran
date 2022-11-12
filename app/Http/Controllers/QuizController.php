@@ -31,16 +31,18 @@ class QuizController extends Controller
         if($request->hasfile('icon', 'header')){
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            $request->file('icon')->storeAs('public/quiz',$namafileicon);
-
+            $request->file('icon')->move('../uploads/quiz', $namafileicon);
+            // $request->file('icon')->storeAs('../uploads/quiz',$namafileicon);
+            
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/quiz',$namafileheader);        
+            $request->file('header')->move('../uploads/quiz', $namafileheader);
+            // $request->file('header')->storeAs('../uploads/quiz',$namafileheader);        
         }
 
         Quiz::create([
-            'icon' => $namafileicon,
-            'header' => $namafileheader,
+            'icon' => 'uploads/quiz/'.$namafileicon,
+            'header' => 'uploads/quiz/'.$namafileheader,
             'judul' => $request->judul,
         ]);
 
@@ -81,7 +83,8 @@ class QuizController extends Controller
             $request->validate(['icon' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            $request->file('icon')->storeAs('public/quiz',$namafileicon);
+            $request->file('icon')->move('../uploads/quiz', $namafileicon);
+            // $request->file('icon')->storeAs('public/quiz',$namafileicon);
             $quiz->icon = $namafileicon;            
         }
 
@@ -89,7 +92,8 @@ class QuizController extends Controller
             $request->validate(['header' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/quiz',$namafileheader);
+            $request->file('header')->move('../uploads/quiz', $namafileheader);
+            // $request->file('header')->storeAs('public/quiz',$namafileheader);
             $quiz->header = $namafileheader; 
         }
 

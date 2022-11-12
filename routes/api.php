@@ -27,6 +27,7 @@ Route::get('submateri', [SubmateriController::class, 'index']);
 Route::get('subsubmateri', [SubsubmateriController::class, 'index']);
 Route::get('kontenssm', [KontenssmController::class, 'index']);
 Route::get('quiz', [QuizController::class, 'index']);
+Route::get('quiz/{quiz_id}', [QuizController::class, 'questions']);
 Route::get('soal', [SoalController::class, 'index']);
 Route::get('berita', [BeritaController::class, 'index']);
 Route::get('pengaturan', [PengaturanController::class, 'index']);
