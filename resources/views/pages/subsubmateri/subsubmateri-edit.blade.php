@@ -19,7 +19,7 @@
                         <div class="form-group">
                             <label>Icon/logo Materi</label>
                             @if($subsubmateri->icon)
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->icon) }}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
+                                <img src="{{ url($subsubmateri->icon )}}" class="img-icon img-fluid mb-3 d-block" style="max-height: 150px;">
                             @endif
                             <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()">
                             @error('icon')
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <label>Header</label>
                             @if($subsubmateri->header)
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->header) }}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($subsubmateri->header )}}" class="img-header img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()">
                             @error('header')
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label>Photo 1</label>
                             @if($subsubmateri->photo1)
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->photo1) }}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($subsubmateri->photo1 )}}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()">
                             @error('photo1')
@@ -89,7 +89,7 @@
                         <div class="form-group">
                             <label>Photo 2</label>
                             @if($subsubmateri->photo2)
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->photo2) }}" class="img-photo2 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($subsubmateri->photo2 )}}" class="img-photo2 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
                             <input type="file" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
                             @error('photo2')

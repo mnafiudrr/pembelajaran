@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label>Icon/logo Materi</label>
                             <img class="img-icon img-fluid mb-3" style="max-height: 150px;">
-                            <input type="file" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()" required>
+                            <input type="file" accept="image/*" class="form-control @error('icon') is-invalid @enderror" name="icon" id="image-icon" onchange="previewIcon()" required>
                             @error('icon')
                                 <div class="invalid-feedback">
                                     File icon tidak sesuai ketentuan.
@@ -32,7 +32,7 @@
                         <div class="form-group">
                             <label>Header</label>
                             <img class="img-header img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
+                            <input type="file" accept="image/*" class="form-control @error('header') is-invalid @enderror" name="header" id="image-header" onchange="previewHeader()" required>
                             @error('header')
                                 <div class="invalid-feedback">
                                     File header tidak sesuai ketentuan.
@@ -53,7 +53,7 @@
                         <div class="form-group">
                             <label>Photo 1</label>
                             <img class="img-photo1 img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()" required>
+                            <input type="file" accept="image/*" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()" required>
                             @error('photo1')
                                 <div class="invalid-feedback">
                                     File photo 1 tidak sesuai ketentuan.
@@ -85,7 +85,7 @@
                         <div class="form-group">
                             <label>Photo 2</label>
                             <img class="img-photo2 img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()" required>
+                            <input type="file" accept="image/*" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()" required>
                             @error('photo2')
                                 <div class="invalid-feedback">
                                     File photo 2 tidak sesuai ketentuan.

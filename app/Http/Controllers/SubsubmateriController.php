@@ -31,31 +31,37 @@ class SubsubmateriController extends Controller
         if($request->hasfile('icon', 'header', 'photo1', 'photo2')){
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            $request->file('icon')->storeAs('public/subsubmateri',$namafileicon);
+            // $request->file('icon')->storeAs('public/subsubmateri',$namafileicon);
+            $request->file('icon')->move('../uploads/subsubmateri', $namafileicon);
 
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/subsubmateri',$namafileheader);
+            // $request->file('header')->storeAs('public/subsubmateri',$namafileheader);
+            $request->file('header')->move('../uploads/subsubmateri', $namafileheader);
 
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            $request->file('photo1')->storeAs('public/subsubmateri',$namafilephoto1);
+            // $request->file('photo1')->storeAs('public/subsubmateri',$namafilephoto1);
+            $request->file('photo1')->move('../uploads/subsubmateri', $namafilephoto1);
+            
 
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            $request->file('photo2')->storeAs('public/subsubmateri',$namafilephoto2);           
+            // $request->file('photo2')->storeAs('public/subsubmateri',$namafilephoto2);
+            $request->file('photo2')->move('../uploads/subsubmateri', $namafilephoto2);
+
         }
 
         Subsubmateri::create([
-            'icon' => $namafileicon,
-            'header' => $namafileheader,
+            'icon' => 'uploads/subsubmateri/'.$namafileicon,
+            'header' => 'uploads/subsubmateri/'.$namafileheader,
             'judul' => $request->judul,
-            'photo1' => $namafilephoto1,
+            'photo1' => 'uploads/subsubmateri/'.$namafilephoto1,
             'paragraf1' => $request->paragraf1,
             'paragraf2' => $request->paragraf2,
             'paragraf3' => $request->paragraf3,
             'paragraf4' => $request->paragraf4,
-            'photo2' => $namafilephoto2,
+            'photo2' => 'uploads/subsubmateri/'.$namafilephoto2,
             'paragraf5' => $request->paragraf5,
             'paragraf6' => $request->paragraf6,
             'paragraf7' => $request->paragraf7,
@@ -112,32 +118,36 @@ class SubsubmateriController extends Controller
             $request->validate(['icon' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            $request->file('icon')->storeAs('public/subsubmateri',$namafileicon);
-            $subsubmateri->icon = $namafileicon;            
+            // $request->file('icon')->storeAs('public/subsubmateri',$namafileicon);
+            $request->file('icon')->move('../uploads/subsubmateri', $namafileicon);
+            $subsubmateri->icon = 'uploads/subsubmateri/'.$namafileicon;            
         }
 
         if($request->hasfile('header')){
             $request->validate(['header' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->storeAs('public/subsubmateri',$namafileheader);
-            $subsubmateri->header = $namafileheader; 
+            // $request->file('header')->storeAs('public/subsubmateri',$namafileheader);
+            $request->file('header')->move('../uploads/subsubmateri', $namafileheader);
+            $subsubmateri->header = 'uploads/subsubmateri/'.$namafileheader; 
         }
 
         if($request->hasfile('photo1')){
             $request->validate(['photo1' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            $request->file('photo1')->storeAs('public/subsubmateri',$namafilephoto1);
-            $subsubmateri->photo1 = $namafilephoto1;
+            // $request->file('photo1')->storeAs('public/subsubmateri',$namafilephoto1);
+            $request->file('photo1')->move('../uploads/subsubmateri', $namafilephoto1);
+            $subsubmateri->photo1 = 'uploads/subsubmateri/'.$namafilephoto1;
         }
 
         if($request->hasfile('photo2')){
             $request->validate(['photo2' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            $request->file('photo2')->storeAs('public/subsubmateri',$namafilephoto2);
-            $subsubmateri->photo2 = $namafilephoto2;
+            // $request->file('photo2')->storeAs('public/subsubmateri',$namafilephoto2);
+            $request->file('photo2')->move('../uploads/subsubmateri', $namafilephoto2);
+            $subsubmateri->photo2 = 'uploads/subsubmateri/'.$namafilephoto2;
         }
 
         $subsubmateri->save();

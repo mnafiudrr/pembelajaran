@@ -30,13 +30,13 @@
                         <tr>
                             <td>Icon/logo</td>
                             <td>
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->icon)}}" style="max-height: 100px;">
+                                <img src="{{ url($subsubmateri->icon )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
                             <td>Header</td>
                             <td>
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->header)}}" style="max-height: 100px;">
+                                <img src="{{ url($subsubmateri->header )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                             <td>Judul</td>
@@ -45,7 +45,7 @@
                         <tr>
                             <td>Photo 1</td>
                             <td>
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->photo1)}}" style="max-height: 100px;">
+                                <img src="{{ url($subsubmateri->photo1 )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
@@ -85,7 +85,7 @@
                         <tr>
                             <td>Photo 2</td>
                             <td>
-                                <img src="{{ asset('storage/subsubmateri/'. $subsubmateri->photo2)}}" style="max-height: 100px;">
+                                <img src="{{ url($subsubmateri->photo2 )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>
