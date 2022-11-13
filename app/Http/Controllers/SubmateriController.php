@@ -27,12 +27,13 @@ class SubmateriController extends Controller
 
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            $request->file('photo')->storeAs('public/submateri',$namafilephoto);            
+            // $request->file('photo')->storeAs('public/submateri',$namafilephoto);
+            $request->file('photo')->move('../uploads/submateri', $namafilephoto);          
         }
 
         Submateri::create([
             'judul' => $request->judul,
-            'photo' => $namafilephoto,
+            'photo' => 'uploads/submateri/'.$namafilephoto,
             'paragraf1' => $request->paragraf1,
             'paragraf2' => $request->paragraf2,
             'materis_id' => $request->materiId,
@@ -77,8 +78,9 @@ class SubmateriController extends Controller
             $request->validate(['photo' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            $request->file('photo')->storeAs('public/submateri',$namafilephoto);
-            $submateri->photo = $namafilephoto;
+            // $request->file('photo')->storeAs('public/submateri',$namafilephoto);
+            $request->file('photo')->move('../uploads/submateri', $namafilephoto);
+            $submateri->photo = 'uploads/submateri/'.$namafilephoto;
         }
 
         $submateri->save();

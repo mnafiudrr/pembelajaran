@@ -29,9 +29,9 @@
                         <div class="form-group">
                             <label>Photo</label>
                             @if($submateri->photo)
-                                <img src="{{ asset('storage/submateri/'. $submateri->photo) }}" class="img-photo img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($submateri->photo )}}" class="img-photo img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()">
+                            <input type="file" accept="image/*" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()">
                             @error('photo')
                                 <div class="invalid-feedback" role="alert">
                                     File photo tidak sesuai ketentuan.

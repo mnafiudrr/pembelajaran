@@ -33,7 +33,7 @@
                         <tr>
                             <td>Photo</td>
                             <td>
-                                <img src="{{ asset('storage/submateri/'. $submateri->photo)}}" style="max-height: 100px;">
+                                <img src="{{ url($submateri->photo )}}" style="max-height: 100px;">
                             </td>
                         </tr>
                         <tr>

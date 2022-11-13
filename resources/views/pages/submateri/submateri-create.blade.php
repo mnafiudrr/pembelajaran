@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label>Photo</label>
                             <img class="img-photo img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()" required>
+                            <input type="file" accept="image/*" class="form-control @error('photo') is-invalid @enderror" name="photo" id="image-photo" onchange="previewPhoto()" required>
                             @error('photo')
                                 <div class="invalid-feedback">
                                     File photo tidak sesuai ketentuan.
