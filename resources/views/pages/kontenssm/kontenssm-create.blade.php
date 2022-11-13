@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label>Photo 1</label>
                             <img class="img-photo1 img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()">
+                            <input type="file" accept="image/*" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()">
                             @error('photo1')
                                 <div class="invalid-feedback">
                                     File photo 1 tidak sesuai ketentuan.
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label>Photo 2</label>
                             <img class="img-photo2 img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
+                            <input type="file" accept="image/*" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
                             @error('photo2')
                                 <div class="invalid-feedback">
                                     File photo 2 tidak sesuai ketentuan.
@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label>Photo 3</label>
                             <img class="img-photo3 img-fluid mb-3" style="max-width: 500px;">
-                            <input type="file" class="form-control @error('photo3') is-invalid @enderror" name="photo3" id="image-photo3" onchange="previewPhoto3()">
+                            <input type="file" accept="image/*" class="form-control @error('photo3') is-invalid @enderror" name="photo3" id="image-photo3" onchange="previewPhoto3()">
                             @error('photo3')
                                 <div class="invalid-feedback">
                                     File photo 3 tidak sesuai ketentuan.

@@ -31,9 +31,9 @@
                         <div class="form-group">
                             <label>Photo 1</label>
                             @if($kontenssm->photo1)
-                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo1) }}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($kontenssm->photo1 )}}" class="img-photo1 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()">
+                            <input type="file" accept="image/*" class="form-control @error('photo1') is-invalid @enderror" name="photo1" id="image-photo1" onchange="previewPhoto1()">
                             @error('photo1')
                                 <div class="invalid-feedback">
                                     File photo 1 tidak sesuai ketentuan.
@@ -44,9 +44,9 @@
                         <div class="form-group">
                             <label>Photo 2</label>
                             @if($kontenssm->photo2)
-                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo2) }}" class="img-photo2 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($kontenssm->photo2 )}}" class="img-photo2 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
+                            <input type="file" accept="image/*" class="form-control @error('photo2') is-invalid @enderror" name="photo2" id="image-photo2" onchange="previewPhoto2()">
                             @error('photo2')
                                 <div class="invalid-feedback">
                                     File photo 2 tidak sesuai ketentuan.
@@ -57,9 +57,9 @@
                         <div class="form-group">
                             <label>Photo 3</label>
                             @if($kontenssm->photo3)
-                                <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo3) }}" class="img-photo3 img-fluid mb-3 d-block" style="max-width: 500px;">
+                                <img src="{{ url($kontenssm->photo3 )}}" class="img-photo3 img-fluid mb-3 d-block" style="max-width: 500px;">
                             @endif
-                            <input type="file" class="form-control @error('photo3') is-invalid @enderror" name="photo3" id="image-photo3" onchange="previewPhoto3()">
+                            <input type="file" accept="image/*" class="form-control @error('photo3') is-invalid @enderror" name="photo3" id="image-photo3" onchange="previewPhoto3()">
                             @error('photo3')
                                 <div class="invalid-feedback">
                                     File photo 3 tidak sesuai ketentuan.
@@ -106,7 +106,7 @@
                                 
                             @else
                                 <br>
-                                <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc1) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
+                                <a href="{{ url($kontenssm->doc1 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
                                     <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                 </a>
                             @endif    
@@ -134,7 +134,7 @@
                                 
                             @else
                                 <br>
-                                <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc2) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
+                                <a href="{{ url($kontenssm->doc2 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
                                     <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                 </a>
                             @endif    
@@ -162,7 +162,7 @@
                                 
                             @else
                                 <br>
-                                <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc3) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
+                                <a href="{{ url($kontenssm->doc3 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mb-3" target="_blank">
                                     <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                 </a>
                             @endif    

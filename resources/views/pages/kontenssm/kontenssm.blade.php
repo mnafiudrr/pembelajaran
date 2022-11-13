@@ -37,7 +37,7 @@
                                 @if($kontenssm->photo1 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo1)}}" style="max-height: 100px;">
+                                    <img src="{{ url($kontenssm->photo1 )}}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
@@ -47,7 +47,7 @@
                                 @if($kontenssm->photo2 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo2)}}" style="max-height: 100px;">
+                                    <img src="{{ url($kontenssm->photo2 )}}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
@@ -57,7 +57,7 @@
                                 @if($kontenssm->photo3 == null)
                                     Tidak ada.
                                 @else
-                                    <img src="{{ asset('storage/kontenssm/'. $kontenssm->photo3)}}" style="max-height: 100px;">
+                                    <img src="{{ url($kontenssm->photo3 )}}" style="max-height: 100px;">
                                 @endif
                             </td>
                         </tr>
@@ -111,7 +111,7 @@
                                 @if($kontenssm->doc1 == null)
                                     Tidak ada.
                                 @else
-                                    <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc1) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
+                                    <a href="{{ url($kontenssm->doc1 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
                                         <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                     </a>
                                 @endif
@@ -133,7 +133,7 @@
                                 @if($kontenssm->doc2 == null)
                                     Tidak ada.
                                 @else
-                                    <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc2) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
+                                    <a href="{{ url($kontenssm->doc2 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
                                         <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                     </a>
                                 @endif
@@ -155,7 +155,7 @@
                                 @if($kontenssm->doc3 == null)
                                     Tidak ada.
                                 @else
-                                    <a href="{{ asset('storage/kontenssm/'.$kontenssm->doc3) }}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
+                                    <a href="{{ url($kontenssm->doc3 )}}" class="d-none d-sm-inline-block btn btn-lg btn-primary shadow-sm mr-2" target="_blank">
                                         <i class="fas fa-file-pdf fa-sm text-white-50"></i> Lihat file
                                     </a>
                                 @endif
