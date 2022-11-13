@@ -27,7 +27,6 @@ class SubmateriController extends Controller
 
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            // $request->file('photo')->storeAs('public/submateri',$namafilephoto);
             $request->file('photo')->move('../uploads/submateri', $namafilephoto);          
         }
 
@@ -78,7 +77,6 @@ class SubmateriController extends Controller
             $request->validate(['photo' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            // $request->file('photo')->storeAs('public/submateri',$namafilephoto);
             $request->file('photo')->move('../uploads/submateri', $namafilephoto);
             $submateri->photo = 'uploads/submateri/'.$namafilephoto;
         }

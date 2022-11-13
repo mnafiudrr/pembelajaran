@@ -41,7 +41,6 @@ class KontenssmController extends Controller
         if($request->hasfile('photo1')){
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            // $request->file('photo1')->storeAs('public/kontenssm',$namafilephoto1);
             $request->file('photo1')->move('../uploads/kontenssm', $namafilephoto1);
             $request->photo1 = $namafilephoto1;
         }
@@ -49,7 +48,6 @@ class KontenssmController extends Controller
         if($request->hasFile('photo2')){
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            // $request->file('photo2')->storeAs('public/kontenssm',$namafilephoto2);
             $request->file('photo2')->move('../uploads/kontenssm', $namafilephoto2);
             $request->photo2 = $namafilephoto2;
         }
@@ -57,7 +55,6 @@ class KontenssmController extends Controller
         if($request->hasFile('photo3')){
             $extphoto3 = $request->file('photo3')->getClientOriginalExtension();
             $namafilephoto3 = "photo3_".time().'.'.$extphoto3;
-            // $request->file('photo3')->storeAs('public/kontenssm',$namafilephoto3);
             $request->file('photo3')->move('../uploads/kontenssm', $namafilephoto3);
             $request->photo3 = $namafilephoto3;
         }
@@ -65,7 +62,6 @@ class KontenssmController extends Controller
         if($request->hasFile('doc1')){
             $extdoc1 = $request->file('doc1')->getClientOriginalExtension();
             $namafiledoc1 = "doc1_".time().'.'.$extdoc1;
-            // $request->file('doc1')->storeAs('public/kontenssm',$namafiledoc1);
             $request->file('doc1')->move('../uploads/kontenssm', $namafiledoc1);
             $request->doc1 = $namafiledoc1;
         }
@@ -73,7 +69,6 @@ class KontenssmController extends Controller
         if($request->hasFile('doc2')){
             $extdoc2 = $request->file('doc2')->getClientOriginalExtension();
             $namafiledoc2 = "doc2_".time().'.'.$extdoc2;
-            // $request->file('doc2')->storeAs('public/kontenssm',$namafiledoc2);
             $request->file('doc2')->move('../uploads/kontenssm', $namafiledoc2);
             $request->doc2 = $namafiledoc2;
         }
@@ -81,7 +76,6 @@ class KontenssmController extends Controller
         if($request->hasFile('doc3')){
             $extdoc3 = $request->file('doc3')->getClientOriginalExtension();
             $namafiledoc3 = "doc3_".time().'.'.$extdoc3;
-            // $request->file('doc3')->storeAs('public/kontenssm',$namafiledoc3);
             $request->file('doc3')->move('../uploads/kontenssm', $namafiledoc3);
             $request->doc3 = $namafiledoc3;
         }
@@ -154,7 +148,6 @@ class KontenssmController extends Controller
             $request->validate(['photo1' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            // $request->file('photo1')->storeAs('public/subsubmateri',$namafilephoto1);
             $request->file('photo1')->move('../uploads/kontenssm', $namafilephoto1);
             $kontenssm->photo1 = 'uploads/kontenssm/'.$namafilephoto1;
         }
@@ -163,7 +156,6 @@ class KontenssmController extends Controller
             $request->validate(['photo2' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            // $request->file('photo2')->storeAs('public/subsubmateri',$namafilephoto2);
             $request->file('photo2')->move('../uploads/kontenssm', $namafilephoto2);
             $kontenssm->photo2 = 'uploads/kontenssm/'.$namafilephoto2;
         }
@@ -172,7 +164,6 @@ class KontenssmController extends Controller
             $request->validate(['photo3' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto3 = $request->file('photo3')->getClientOriginalExtension();
             $namafilephoto3 = "photo3_".time().'.'.$extphoto3;
-            // $request->file('photo3')->storeAs('public/subsubmateri',$namafilephoto3);
             $request->file('photo3')->move('../uploads/kontenssm', $namafilephoto3);
             $kontenssm->photo3 = 'uploads/kontenssm/'.$namafilephoto3;
         }
@@ -181,7 +172,6 @@ class KontenssmController extends Controller
             $request->validate(['doc1' => 'mimes:pdf|max:4096',]);
             $extdoc1 = $request->file('doc1')->getClientOriginalExtension();
             $namafiledoc1 = "doc1_".time().'.'.$extdoc1;
-            // $request->file('doc1')->storeAs('public/kontenssm',$namafiledoc1);
             $request->file('doc1')->move('../uploads/kontenssm', $namafiledoc1);
             $request->doc1 = $namafiledoc1;
         }
@@ -190,7 +180,6 @@ class KontenssmController extends Controller
             $request->validate(['doc2' => 'mimes:pdf|max:4096',]);
             $extdoc2 = $request->file('doc2')->getClientOriginalExtension();
             $namafiledoc2 = "doc2_".time().'.'.$extdoc2;
-            // $request->file('doc2')->storeAs('public/kontenssm',$namafiledoc2);
             $request->file('doc2')->move('../uploads/kontenssm', $namafiledoc2);
             $request->doc2 = $namafiledoc2;
         }
@@ -199,7 +188,6 @@ class KontenssmController extends Controller
             $request->validate(['doc3' => 'mimes:pdf|max:4096',]);
             $extdoc3 = $request->file('doc3')->getClientOriginalExtension();
             $namafiledoc3 = "doc3_".time().'.'.$extdoc3;
-            // $request->file('doc3')->storeAs('public/kontenssm',$namafiledoc3);
             $request->file('doc3')->move('../uploads/kontenssm', $namafiledoc3);
             $request->doc3 = $namafiledoc3;
         }

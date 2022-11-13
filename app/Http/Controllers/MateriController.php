@@ -35,17 +35,14 @@ class MateriController extends Controller
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
             $request->file('icon')->move('../uploads/materi', $namafileicon);
-            // $request->file('icon')->storeAs('public/materi',$namafileicon);
             
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
             $request->file('header')->move('../uploads/materi', $namafileheader);
-            // $request->file('header')->storeAs('public/materi',$namafileheader);
             
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            $request->file('photo')->move('../uploads/materi', $namafilephoto);
-            // $request->file('photo')->storeAs('public/materi',$namafilephoto);          
+            $request->file('photo')->move('../uploads/materi', $namafilephoto);       
         }
 
         Materi::create([
@@ -105,7 +102,6 @@ class MateriController extends Controller
             $request->validate(['icon' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
-            // $request->file('icon')->storeAs('public/materi',$namafileicon);
             $request->file('icon')->move('../uploads/materi', $namafileicon);
             $materi->icon = 'uploads/materi/'.$namafileicon;            
         }
@@ -114,7 +110,6 @@ class MateriController extends Controller
             $request->validate(['header' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            // $request->file('header')->storeAs('public/materi',$namafileheader);
             $request->file('header')->move('../uploads/materi', $namafileheader);
             $materi->header = 'uploads/materi/'.$namafileheader; 
         }
@@ -123,7 +118,6 @@ class MateriController extends Controller
             $request->validate(['photo' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',]);
             $extphoto = $request->file('photo')->getClientOriginalExtension();
             $namafilephoto = "photo_".time().'.'.$extphoto;
-            // $request->file('photo')->storeAs('public/materi',$namafilephoto);
             $request->file('photo')->move('../uploads/materi', $namafilephoto);
             $materi->photo = 'uploads/materi/'.$namafilephoto;
         }

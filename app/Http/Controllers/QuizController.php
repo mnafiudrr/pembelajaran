@@ -32,12 +32,10 @@ class QuizController extends Controller
             $exticon = $request->file('icon')->getClientOriginalExtension();
             $namafileicon = "icon_".time().'.'.$exticon;
             $request->file('icon')->move('../uploads/quiz', $namafileicon);
-            // $request->file('icon')->storeAs('../uploads/quiz',$namafileicon);
             
             $extheader = $request->file('header')->getClientOriginalExtension();
             $namafileheader = "header_".time().'.'.$extheader;
-            $request->file('header')->move('../uploads/quiz', $namafileheader);
-            // $request->file('header')->storeAs('../uploads/quiz',$namafileheader);        
+            $request->file('header')->move('../uploads/quiz', $namafileheader);      
         }
 
         Quiz::create([

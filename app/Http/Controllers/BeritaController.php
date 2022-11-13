@@ -36,21 +36,18 @@ class BeritaController extends Controller
         if($request->hasfile('photo1')){
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            // $request->file('photo1')->storeAs('public/berita',$namafilephoto1);
             $request->file('photo1')->move('../uploads/berita',$namafilephoto1);
         }
 
         if($request->hasfile('photo2')){
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            // $request->file('photo2')->storeAs('public/berita',$namafilephoto2);
             $request->file('photo2')->move('../uploads/berita',$namafilephoto2);       
         }
 
         if($request->hasfile('photo3')){
             $extphoto3 = $request->file('photo3')->getClientOriginalExtension();
             $namafilephoto3 = "photo3_".time().'.'.$extphoto3;
-            // $request->file('photo3')->storeAs('public/berita',$namafilephoto3);
             $request->file('photo3')->move('../uploads/berita',$namafilephoto3);         
         }
 
@@ -99,7 +96,6 @@ class BeritaController extends Controller
         if($request->hasfile('photo1')){
             $extphoto1 = $request->file('photo1')->getClientOriginalExtension();
             $namafilephoto1 = "photo1_".time().'.'.$extphoto1;
-            // $request->file('photo1')->storeAs('public/berita',$namafilephoto1);
             $request->file('photo1')->move('../uploads/berita',$namafilephoto1);
             $berita->photo1 = 'uploads/berita/'.$namafilephoto1;         
         }
@@ -107,7 +103,6 @@ class BeritaController extends Controller
         if($request->hasfile('photo2')){
             $extphoto2 = $request->file('photo2')->getClientOriginalExtension();
             $namafilephoto2 = "photo2_".time().'.'.$extphoto2;
-            // $request->file('photo2')->storeAs('public/berita',$namafilephoto2);
             $request->file('photo2')->move('../uploads/berita',$namafilephoto2); 
             $berita->photo2 = 'uploads/berita/'.$namafilephoto2;       
         }
@@ -115,7 +110,6 @@ class BeritaController extends Controller
         if($request->hasfile('photo3')){    
             $extphoto3 = $request->file('photo3')->getClientOriginalExtension();
             $namafilephoto3 = "photo3_".time().'.'.$extphoto3;
-            // $request->file('photo3')->storeAs('public/berita',$namafilephoto3);
             $request->file('photo3')->move('../uploads/berita',$namafilephoto3);
             $berita->photo3 = 'uploads/berita/'.$namafilephoto3;      
         }
