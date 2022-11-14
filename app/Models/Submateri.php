@@ -21,4 +21,9 @@ class Submateri extends Model
     {
         return $this->belongsTo('App\Models\Materi','materis_id');
     }
+
+    public function subsubmateris()
+    {
+        return $this->hasMany(Subsubmateri::class,'submateris_id');
+    }
 }

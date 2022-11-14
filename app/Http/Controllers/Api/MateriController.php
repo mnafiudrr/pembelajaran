@@ -6,25 +6,53 @@ use App\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Materi;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class MateriController extends Controller
 {
-    public function index(){
-        $data = Materi::all();
+    // public function index(){
+    //     $data = Materi::all();
 
-        if($data){
-            return ApiFormatter::createApi(200, 'Success', $data);
-        }else{
-            return ApiFormatter::createApi(400, 'Failed');
-        }
+    //     if($data){
+    //         return ApiFormatter::createApi(200, 'Success', $data);
+    //     }else{
+    //         return ApiFormatter::createApi(400, 'Failed');
+    //     }
+    // }
+
+    public function index()
+    {
+        $materi = Materi::select('id', 'icon', 'judul')->get();
+
+        $data = $materi->transform(
+            function ($item){
+                return [
+                    "icon" => url($item->icon),
+                    "id" => $item->id,
+                    "title" => $item->judul
+                ];
+            }
+        );
+
+        return response()->json(["data" => [
+            "materi" => $data
+        ]], 200);
     }
 
-    public function test($id)
+    public function materi($id)
     {
         $materi = Materi::find($id);
 
         $contents = $materi->content;
         $contents = [
+            [
+                'content_type_id' => 2,
+                'value' => $materi->header,
+            ],
+            [
+                'content_type_id' => 1,
+                'value' => $materi->judul,
+            ],
             [
                 'content_type_id' => 3,
                 'value' => $materi->link,
@@ -34,50 +62,62 @@ class MateriController extends Controller
                 'value' => $materi->photo,
             ],
             [
-                'content_type_id' => 3,
+                'content_type_id' => 1,
                 'value' => $materi->paragraf1,
             ],
             [
-                'content_type_id' => 3,
+                'content_type_id' => 1,
                 'value' => $materi->paragraf2,
             ],
             [
-                'content_type_id' => 3,
+                'content_type_id' => 1,
                 'value' => $materi->paragraf3,
             ],
             [
-                'content_type_id' => 3,
+                'content_type_id' => 1,
                 'value' => $materi->paragraf4,
             ],
         ];
 
-        $subMateris = $materi->submateris->transform( function ($item) {
-            return [
-                'id' => $item->id,
-                'title' => $item->judul,
-                'contents' => [
-                    [
-                        'content_type_id' => 2,
-                        'value' => $item->photo,
+        $subMateris = $materi->submateris->transform( 
+            function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->judul,
+                    'contents' => [
+                        [
+                            'content_type_id' => 2,
+                            'value' => $item->photo,
+                        ],
+                        [
+                            'content_type_id' => 1,
+                            'value' => $item->paragraf1,
+                        ],
+                        [
+                            'content_type_id' => 1,
+                            'value' => $item->paragraf2,
+                        ],
                     ],
-                    [
-                        'content_type_id' => 3,
-                        'value' => $item->paragraf1,
-                    ],
-                    [
-                        'content_type_id' => 3,
-                        'value' => $item->paragraf2,
-                    ],
-                ],
-            ];
-        });
+                ];
+            }
+        );
+
+        $subSubMateris = $subMateris->subsubmateris->transform(
+            function ($item) {
+                return [
+                    "icon" => url($item->icon),
+                    "id" => $item->id,
+                    "title" => $item->judul
+                ];
+            }
+        );
 
         return response()->json([
             "data" => [
                 "id" => $materi->id,
-                "logo" => $materi->logo,
                 "contents" => $contents,
-                "subMateris" => $subMateris
+                "subMateris" => $subMateris,
+                "subSubMateri" => $subSubMateris,
             ]
         ], 200);
     }

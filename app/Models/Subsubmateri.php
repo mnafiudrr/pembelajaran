@@ -30,4 +30,9 @@ class Subsubmateri extends Model
     {
         return $this->belongsTo('App\Models\Submateri','submateris_id');
     }
+
+    public function kontenssm()
+    {
+        return $this->hasMany(Kontenssm::class,'subsubmateris_id');
+    }
 }
