@@ -79,7 +79,12 @@
                         <tbody>
                             @foreach($soal as $soal)
                                 <tr>
-                                    <td>
+                                    <td style="
+                                        white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                        max-width: 50ch;
+                                    ">
                                         {{$soal->soal}}
                                     </td>
                                     <td>

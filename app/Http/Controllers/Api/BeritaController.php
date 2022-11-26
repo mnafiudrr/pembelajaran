@@ -10,6 +10,27 @@ use Illuminate\Http\Request;
 class BeritaController extends Controller
 {
     public function index(){
+        $berita = Berita::select('id', 'judul', 'photo1')->orderBy('created_at', 'desc')->limit(6)->get();
+
+        $data = $berita->transform(
+            function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->judul,
+                    'icon' => url($item->photo1)
+                ];
+            }
+        );
+        
+        return response()->json([
+            "data" => $data,
+            "meta" => [
+                "status" => "success"
+            ]
+        ]);
+    }
+
+    public function all(){
         $berita = Berita::select('id', 'judul', 'photo1')->get();
 
         $data = $berita->transform(
