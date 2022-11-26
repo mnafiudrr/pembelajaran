@@ -66,7 +66,11 @@ class BeritaController extends Controller
         ];
         
         return response()->json([
-            "data" => $data,
+            "data" => [
+                "id" => $berita->id,
+                "title" => $berita->judul,
+                "contents" => $data
+            ],
             "meta" => [
                 "message" => "success"
             ]
