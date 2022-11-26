@@ -141,7 +141,7 @@ class SubsubmateriController extends Controller
         return response()->json([
             "data" => [
                 "id" => $subsubmateri->id,
-                'header' => $subsubmateri->header,
+                'header' => url($subsubmateri->header),
                 'title' => $subsubmateri->judul,
                 "contents" => $contents,
                 "kontenssm" => $kontenssm,
