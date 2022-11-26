@@ -27,15 +27,7 @@ class SubsubmateriController extends Controller
         $contents = [
             [
                 'content_type_id' => 2,
-                'value' => $subsubmateri->header,
-            ],
-            [
-                'content_type_id' => 1,
-                'value' => $subsubmateri->judul,
-            ],
-            [
-                'content_type_id' => 2,
-                'value' => $subsubmateri->photo1,
+                'value' => $subsubmateri->photo1?url($subsubmateri->photo1):null,
             ],
             [
                 'content_type_id' => 1,
@@ -55,7 +47,7 @@ class SubsubmateriController extends Controller
             ],
             [
                 'content_type_id' => 2,
-                'value' => $subsubmateri->photo2,
+                'value' => $subsubmateri->photo2?url($subsubmateri->photo2):null,
             ],
             [
                 'content_type_id' => 1,
@@ -83,15 +75,15 @@ class SubsubmateriController extends Controller
                     'contents' => [
                         [
                             'content_type_id' => 2,
-                            'value' => $item->photo1,
+                            'value' => $item->photo1?url($item->photo1):null,
                         ],
                         [
                             'content_type_id' => 2,
-                            'value' => $item->photo2,
+                            'value' => $item->photo2?url($item->photo2):null,
                         ],
                         [
                             'content_type_id' => 2,
-                            'value' => $item->photo3,
+                            'value' => $item->photo3?url($item->photo3):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -111,7 +103,7 @@ class SubsubmateriController extends Controller
                         ],
                         [
                             'content_type_id' => 4,
-                            'value' => url($item->doc1),
+                            'value' => $item->doc1?url($item->doc1):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -119,7 +111,7 @@ class SubsubmateriController extends Controller
                         ],
                         [
                             'content_type_id' => 4,
-                            'value' => url($item->doc2),
+                            'value' => $item->doc2?url($item->doc2):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -127,7 +119,7 @@ class SubsubmateriController extends Controller
                         ],
                         [
                             'content_type_id' => 4,
-                            'value' => url($item->doc3),
+                            'value' => $item->doc3?url($item->doc3):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -135,7 +127,7 @@ class SubsubmateriController extends Controller
                         ],
                         [
                             'content_type_id' => 4,
-                            'value' => url($item->doc4),
+                            'value' => $item->doc4?url($item->doc4):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -149,6 +141,8 @@ class SubsubmateriController extends Controller
         return response()->json([
             "data" => [
                 "id" => $subsubmateri->id,
+                'header' => $subsubmateri->header,
+                'title' => $subsubmateri->judul,
                 "contents" => $contents,
                 "kontenssm" => $kontenssm,
             ]

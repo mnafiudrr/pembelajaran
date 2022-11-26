@@ -46,20 +46,12 @@ class MateriController extends Controller
         $contents = $materi->content;
         $contents = [
             [
-                'content_type_id' => 2,
-                'value' => $materi->header,
-            ],
-            [
-                'content_type_id' => 1,
-                'value' => $materi->judul,
-            ],
-            [
                 'content_type_id' => 3,
                 'value' => $materi->link,
             ],
             [
                 'content_type_id' => 2,
-                'value' => $materi->photo,
+                'value' => $materi->photo?url($materi->photo):null,
             ],
             [
                 'content_type_id' => 1,
@@ -96,7 +88,7 @@ class MateriController extends Controller
                     'contents' => [
                         [
                             'content_type_id' => 2,
-                            'value' => $item->photo,
+                            'value' => $item->photo?url($item->photo):null,
                         ],
                         [
                             'content_type_id' => 1,
@@ -125,6 +117,8 @@ class MateriController extends Controller
         return response()->json([
             "data" => [
                 "id" => $materi->id,
+                "header" => url($materi->header),
+                'title' => $materi->judul,
                 "contents" => $contents,
                 "subMateris" => $subMateris,
                 // "subSubMateri" => $subSubMateris,
