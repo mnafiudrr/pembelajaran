@@ -39,7 +39,7 @@ class MateriController extends Controller
         ]], 200);
     }
 
-    public function materi($id)
+    public function show($id)
     {
         $materi = Materi::find($id);
 
@@ -78,9 +78,18 @@ class MateriController extends Controller
                 'value' => $materi->paragraf4,
             ],
         ];
-
+        // dd($materi->submateris);
         $subMateris = $materi->submateris->transform( 
             function ($item) {
+                $subSubMateris = $item->subsubmateris->transform(
+                        function ($item) {
+                            return [
+                                "icon" => url($item->icon),
+                                "id" => $item->id,
+                                "title" => $item->judul
+                            ];
+                        }
+                    );
                 return [
                     'id' => $item->id,
                     'title' => $item->judul,
@@ -98,26 +107,27 @@ class MateriController extends Controller
                             'value' => $item->paragraf2,
                         ],
                     ],
+                    'subSubMateris' => $subSubMateris,
                 ];
             }
         );
 
-        $subSubMateris = $subMateris->subsubmateris->transform(
-            function ($item) {
-                return [
-                    "icon" => url($item->icon),
-                    "id" => $item->id,
-                    "title" => $item->judul
-                ];
-            }
-        );
+        // $subSubMateris = $subMateris->subsubmateris->transform(
+        //     function ($item) {
+        //         return [
+        //             "icon" => url($item->icon),
+        //             "id" => $item->id,
+        //             "title" => $item->judul
+        //         ];
+        //     }
+        // );
 
         return response()->json([
             "data" => [
                 "id" => $materi->id,
                 "contents" => $contents,
                 "subMateris" => $subMateris,
-                "subSubMateri" => $subSubMateris,
+                // "subSubMateri" => $subSubMateris,
             ]
         ], 200);
     }

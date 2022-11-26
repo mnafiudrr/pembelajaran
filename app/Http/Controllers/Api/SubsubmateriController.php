@@ -19,7 +19,7 @@ class SubsubmateriController extends Controller
     //     }
     // }
 
-    public function subsubmateri($id)
+    public function show($id)
     {
         $subsubmateri = Subsubmateri::find($id);
 

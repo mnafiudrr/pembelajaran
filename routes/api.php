@@ -23,8 +23,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('materi', [MateriController::class, 'index']);
+Route::get('materi/{id}', [MateriController::class, 'show']);
 Route::get('submateri', [SubmateriController::class, 'index']);
 Route::get('subsubmateri', [SubsubmateriController::class, 'index']);
+Route::get('subsubmateri/{id}', [SubsubmateriController::class, 'show']);
 Route::get('kontenssm', [KontenssmController::class, 'index']);
 Route::get('quiz', [QuizController::class, 'index']);
 Route::get('quiz/{quiz_id}', [QuizController::class, 'questions']);
