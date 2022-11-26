@@ -31,7 +31,7 @@ class BeritaController extends Controller
     }
 
     public function all(){
-        $berita = Berita::select('id', 'judul', 'photo1')->get();
+        $berita = Berita::select('id', 'judul', 'photo1')->orderBy('created_at', 'desc')->get();
 
         $data = $berita->transform(
             function ($item) {

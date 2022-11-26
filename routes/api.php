@@ -32,6 +32,7 @@ Route::get('quiz', [QuizController::class, 'index']);
 Route::get('quiz/{quiz_id}', [QuizController::class, 'questions']);
 Route::get('soal', [SoalController::class, 'index']);
 Route::get('berita', [BeritaController::class, 'index']);
+Route::get('berita/all', [BeritaController::class, 'all']);
 Route::get('berita/{id}', [BeritaController::class, 'show']);
 Route::get('pengaturan', [PengaturanController::class, 'index']);
 
