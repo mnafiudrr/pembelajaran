@@ -65,7 +65,7 @@ class QuizController extends Controller
         return response()->json([
             'data' => [
                 'judul' => $quiz->judul,
-                'header' => $quiz->header,
+                'header' => url($quiz->header),
                 'quiz' => $soals
             ]
         ], 200);
